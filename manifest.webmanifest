@@ -1,8 +1,8 @@
 {
   "name": "Amanita Field Research & Observer",
   "short_name": "Amanita Field",
-  "start_url": "./Amanita_Field_Research_Observer_App.html",
-  "scope": "./",
+  "start_url": "/Amanita/",
+  "scope": "/Amanita/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#f4f5f1",
