@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17251f">
+<title>Amanita | UK Field Guide</title>
+<style>
+:root{--bg:#f4f5f1;--card:#fff;--green:#24483a;--ink:#17251f;--muted:#66716a;--line:#dce2dc;--red:#a74343}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,sans-serif}
+header{background:linear-gradient(135deg,#17251f,#32634e);color:white;padding:22px 17px}
+header a{color:white}
+main{max-width:850px;margin:auto;padding:14px}
+.card{background:white;border:1px solid var(--line);border-radius:16px;padding:15px;margin-bottom:12px}
+h1{font-size:25px;margin:12px 0}
+h2{font-size:20px;color:var(--green)}
+h3{margin:0 0 5px}
+p{line-height:1.5}
+small,.muted{color:var(--muted)}
+input,select,button{font:inherit}
+input,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:white;margin:5px 0}
+button{background:var(--green);color:white;border:0;padding:10px 13px;border-radius:9px;font-weight:700}
+.filters{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.species{margin-top:10px}
+.latin{font-style:italic;color:var(--muted);font-size:13px}
+.tag{display:inline-block;background:#e8eee9;color:var(--green);padding:5px 8px;border-radius:20px;font-size:11px;margin:7px 0}
+.danger{background:#f8e5e2;color:#922d27}
+.detail{border-top:1px solid var(--line);margin-top:12px;padding-top:8px}
+.detail p{font-size:14px}
+.warning{background:#fff0d2;padding:13px;border-left:4px solid #c28b3e;border-radius:8px;font-size:13px}
+.hidden{display:none}
+footer{text-align:center;padding:20px;color:var(--muted);font-size:12px}
+@media(max-width:480px){.filters{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<a href="index.html">← Back to Amanita home</a>
+<h1>🍄 UK Mushroom Field Guide</h1>
+<p>A pocket guide to Britain's wild fungi.</p>
+</header>
+<main>
+<div class="warning">
+<strong>Safety first</strong><br>
+This guide cannot confirm that a mushroom is safe to eat. Never eat a wild mushroom based on an app or photograph. Some lookalikes are deadly poisonous.
+</div>
+
+<section class="card">
+<h2>Find a mushroom</h2>
+<input id="search" placeholder="Search common or scientific name..." oninput="render()">
+<div class="filters">
+<select id="habitat" onchange="render()">
+<option value="">All habitats</option>
+<option>Woodland</option>
+<option>Broadleaf woodland</option>
+<option>Conifer woodland</option>
+<option>Grassland</option>
+<option>Dead wood</option>
+<option>Gardens and parks</option>
+</select>
+<select id="risk" onchange="render()">
+<option value="">All risk categories</option>
+<option>Deadly poisonous</option>
+<option>Poisonous</option>
+<option>Edibility not assessed here</option>
+<option>Known edible species</option>
+</select>
+</div>
+<p id="count" class="muted"></p>
+<div id="results"></div>
+</section>
+</main>
+<footer>Amanita Field Research · FungiFinder UK</footer>
+
+<script>
+const fungi = [
+{
+name:"Fly agaric",latin:"Amanita muscaria",
+habitat:"Woodland",season:"Late summer to autumn",
+features:"Usually a red cap with pale patches, white gills and a stem ring. Colours and patches vary.",
+lookalikes:"Other Amanita species, including the panther cap and blusher.",
+risk:"Poisonous",
+example:"Often found among birch or pine, growing from moss or woodland leaf litter.",
+warning:"Contains ibotenic acid and muscimol. Can cause serious poisoning."
+},
+{
+name:"Death cap",latin:"Amanita phalloides",
+habitat:"Broadleaf woodland",season:"Summer to autumn",
+features:"Often olive-green or pale cap, white gills, stem ring and a sac-like cup at the stem base.",
+lookalikes:"Other pale Amanitas and some edible-looking mushrooms.",
+risk:"Deadly poisonous",
+example:"Often associated with oak and beech trees.",
+warning:"Can cause fatal liver failure. Features may be hidden or damaged."
+},
+{
+name:"Destroying angel",latin:"Amanita virosa",
+habitat:"Woodland",season:"Summer to autumn",
+features:"White cap, white gills and stem, often with a ring and cup at the base.",
+lookalikes:"Other white Amanitas and white-capped mushrooms.",
+risk:"Deadly poisonous",
+example:"Mossy woodland, including beech woodland.",
+warning:"Contains amatoxins. White mushrooms can be dangerously difficult to identify."
+},
+{
+name:"Panther cap",latin:"Amanita pantherina",
+habitat:"Woodland",season:"Summer to autumn",
+features:"Brown cap with pale patches, white gills and a ringed stem.",
+lookalikes:"Fly agaric and other brown-capped Amanitas.",
+risk:"Poisonous",
+example:"Woodland, often associated with beech and other broadleaf trees.",
+warning:"Can cause severe neurological poisoning."
+},
+{
+name:"King bolete / porcini",latin:"Boletus edulis",
+habitat:"Woodland",season:"Late summer to autumn",
+features:"Brown cap, pale pores becoming yellow-green with age, stout stem and pale net-like markings.",
+lookalikes:"Bitter bolete and other boletes, including toxic species.",
+risk:"Known edible species",
+example:"May grow near beech, oak, birch or conifers.",
+warning:"This entry is for learning, not confirmation that a found specimen is edible."
+},
+{
+name:"Chanterelle",latin:"Cantharellus cibarius",
+habitat:"Woodland",season:"Summer to late autumn",
+features:"Golden-yellow fruit body with blunt branching ridges underneath rather than thin blade-like gills.",
+lookalikes:"False chanterelle and other orange mushrooms.",
+risk:"Known edible species",
+example:"Mossy woodland near broadleaf trees or conifers.",
+warning:"Check the underside carefully. Colour alone is not sufficient for identification."
+},
+{
+name:"Sulphur tuft",latin:"Hypholoma fasciculare",
+habitat:"Dead wood",season:"Most of the year",
+features:"Dense clusters of yellow caps, often with greenish-yellow gills that darken with age.",
+lookalikes:"Honey fungus and other clustered wood-growing mushrooms.",
+risk:"Poisonous",
+example:"Clusters on stumps, fallen trunks and buried wood.",
+warning:"Poisonous. Mushrooms growing in clusters are not automatically edible."
+},
+{
+name:"Funeral bell",latin:"Galerina marginata",
+habitat:"Dead wood",season:"Most of the year",
+features:"Small brown caps, brown gills and slender stems, growing on decaying wood.",
+lookalikes:"Velvet shank and other small brown wood-growing fungi.",
+risk:"Deadly poisonous",
+example:"Often grows on decaying conifer wood.",
+warning:"Contains amatoxins and can be fatal. Never eat unidentified small brown mushrooms."
+},
+{
+name:"Scarlet elf cup",latin:"Sarcoscypha austriaca",
+habitat:"Dead wood",season:"Winter to spring",
+features:"Bright red cup-shaped fruit body with a paler outer surface.",
+lookalikes:"Related red cup fungi.",
+risk:"Edibility not assessed here",
+example:"Damp woodland, on buried deciduous twigs.",
+warning:"Closely related species can be difficult to separate confidently."
+},
+{
+name:"Turkey tail",latin:"Trametes versicolor",
+habitat:"Dead wood",season:"Throughout the year",
+features:"Thin fan-shaped brackets with concentric colour bands and tiny pores underneath.",
+lookalikes:"Other small bracket fungi.",
+risk:"Edibility not assessed here",
+example:"Dead deciduous branches, logs and stumps.",
+warning:"A common decomposer. Similar bracket fungi may require closer examination."
+}
+];
+
+function esc(s){
+return String(s).replace(/[&<>"']/g,c=>({
+"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+}[c]));
+}
+
+function render(){
+const q=document.getElementById("search").value.toLowerCase().trim();
+const h=document.getElementById("habitat").value;
+const r=document.getElementById("risk").value;
+const found=fungi.filter(f=>
+(f.name+" "+f.latin+" "+f.features+" "+f.habitat).toLowerCase().includes(q)
+&&(!h||f.habitat===h)
+&&(!r||f.risk===r)
+);
+document.getElementById("count").textContent=
+found.length+" species shown · "+fungi.length+" currently in this starter catalogue";
+
+document.getElementById("results").innerHTML=found.map((f,i)=>`
+<article class="card species">
+<h3>${esc(f.name)}</h3>
+<div class="latin">${esc(f.latin)}</div>
+<span class="tag ${f.risk==="Deadly poisonous"||f.risk==="Poisonous"?"danger":""}">${esc(f.risk)}</span>
+<button onclick="toggle(${fungi.indexOf(f)})" id="btn${fungi.indexOf(f)}">View details</button>
+<div class="detail hidden" id="detail${fungi.indexOf(f)}">
+<p><strong>Identifying features</strong><br>${esc(f.features)}</p>
+<p><strong>Typical habitat</strong><br>${esc(f.example)}</p>
+<p><strong>Season</strong><br>${esc(f.season)}</p>
+<p><strong>Lookalikes</strong><br>${esc(f.lookalikes)}</p>
+<p><strong>Safety notes</strong><br>${esc(f.warning)}</p>
+</div>
+</article>`).join("")||"<p>No matching species. Try another search.</p>";
+}
+
+function toggle(i){
+const el=document.getElementById("detail"+i);
+const btn=document.getElementById("btn"+i);
+el.classList.toggle("hidden");
+btn.textContent=el.classList.contains("hidden")?"View details":"Hide details";
+}
+render();
+</script>
+</body>
+</html>
