@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,33 +22,45 @@ button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 .top{background:linear-gradient(135deg,#17251f,#2d5946);color:white;padding:20px 16px 22px;position:sticky;top:0;z-index:20;box-shadow:0 2px 15px #0002}
 .toprow{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.brand{display:flex;align-items:center;gap:11px}.logo{width:44px;height:44px;border-radius:14px;background:#eee4c9;display:grid;place-items:center;font-size:25px}
-.top h1{font-size:19px;margin:0}.top small{opacity:.78}
+.brand{display:flex;align-items:center;gap:11px}
+.logo{width:44px;height:44px;border-radius:14px;background:#eee4c9;display:grid;place-items:center;font-size:25px}
+.top h1{font-size:19px;margin:0}
+.top small{opacity:.78}
 main{max-width:900px;margin:auto;padding:16px 13px 90px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:17px;margin:12px 0;box-shadow:var(--shadow)}
 .hero{background:linear-gradient(145deg,#fffdf7,#eef4ee);overflow:hidden}
 .hero h2{font-size:27px;line-height:1.08;margin:5px 0 9px}
 h2{font-size:19px;margin:0 0 10px;color:var(--green)}
 h3{font-size:15px;margin:17px 0 8px}
-p{line-height:1.5}.muted{color:var(--muted);font-size:13px}
+p{line-height:1.5}
+.muted{color:var(--muted);font-size:13px}
 .modegrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
 .mode{border:1px solid var(--line);background:white;border-radius:18px;padding:18px;text-align:left;min-height:165px;box-shadow:0 4px 16px #0000000a}
-.mode strong{display:block;font-size:18px;margin:7px 0}.mode span{font-size:13px;color:var(--muted);line-height:1.4}
-.mode.research{border-top:5px solid var(--green2)}.mode.observe{border-top:5px solid var(--gold)}
+.mode strong{display:block;font-size:18px;margin:7px 0}
+.mode span{font-size:13px;color:var(--muted);line-height:1.4}
+.mode.research{border-top:5px solid var(--green2)}
+.mode.observe{border-top:5px solid var(--gold)}
+.mode.guide{border-top:5px solid #698a54}
 .icon{font-size:30px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.full{grid-column:1/-1}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.full{grid-column:1/-1}
 label{font-size:12px;font-weight:750;color:var(--muted);display:block;margin:0 0 5px}
 input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
 textarea{min-height:85px;resize:vertical}
 .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
 button{border:0;border-radius:12px;padding:11px 14px;font-weight:750;background:var(--green);color:#fff}
-button.secondary{background:#e8eee9;color:var(--green)}button.gold{background:var(--gold)}button.danger{background:var(--danger)}
+button.secondary{background:#e8eee9;color:var(--green)}
+button.gold{background:var(--gold)}
+button.danger{background:var(--danger)}
 .back{background:transparent;color:#fff;padding:6px 8px}
 .pill{display:inline-block;background:#e9f0eb;color:var(--green);padding:5px 9px;border-radius:99px;font-size:11px;font-weight:800}
-.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:#f6f8f5;border-radius:14px;padding:12px}.stat b{font-size:24px;display:block;color:var(--green)}
+.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{background:#f6f8f5;border-radius:14px;padding:12px}
+.stat b{font-size:24px;display:block;color:var(--green)}
 .section{border-top:1px solid var(--line);margin-top:15px;padding-top:4px}
 .photoBox{border:2px dashed #c9d3cb;border-radius:16px;padding:15px;text-align:center;background:#fbfcfa}
-.preview{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}.preview img{width:100%;height:105px;object-fit:cover;border-radius:11px}
+.preview{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}
+.preview img{width:100%;height:105px;object-fit:cover;border-radius:11px}
 .record{border:1px solid var(--line);border-left:5px solid var(--green2);border-radius:13px;padding:12px;margin:9px 0;background:#fbfcfa}
 .record img{width:100%;max-height:220px;object-fit:cover;border-radius:10px;margin-top:8px}
 .warn{background:#fff5dc;border-left:5px solid var(--gold);padding:12px;border-radius:9px;font-size:13px}
@@ -56,37 +69,61 @@ button.secondary{background:#e8eee9;color:var(--green)}button.gold{background:va
 nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;gap:5px;padding:7px;z-index:30}
 nav button{background:transparent;color:var(--muted);padding:8px 10px;font-size:11px}
 nav button.active{background:#eaf0eb;color:var(--green)}
-@media(max-width:620px){.modegrid,.grid{grid-template-columns:1fr}.full{grid-column:auto}.statgrid{grid-template-columns:1fr 1fr}.top h1{font-size:17px}}
-@media(min-width:621px){.formcols{display:grid;grid-template-columns:1fr 1fr;gap:12px}.formcols .full{grid-column:1/-1}}
+@media(max-width:620px){
+ .modegrid,.grid{grid-template-columns:1fr}
+ .full{grid-column:auto}
+ .statgrid{grid-template-columns:1fr 1fr}
+ .top h1{font-size:17px}
+}
+@media(min-width:621px){
+ .formcols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ .formcols .full{grid-column:1/-1}
+}
 </style>
 </head>
 <body>
 <header class="top">
  <div class="toprow">
-  <div class="brand"><div class="logo">🍄</div><div><h1>Amanita Field Research</h1><small>Researcher + Observer</small></div></div>
+  <div class="brand">
+   <div class="logo">🍄</div>
+   <div><h1>FungiFinderUK</h1><small>UK Field Guide · Amanita Research · Observer</small></div>
+  </div>
   <button id="homeBtn" class="back hidden" onclick="showHome()">⌂ Home</button>
  </div>
 </header>
 
 <main>
 <section id="home" class="hero card">
- <span class="pill">ONE APP • TWO MODES</span>
- <h2>Choose how you want to record your find.</h2>
- <p class="muted">Use <b>Researcher</b> for detailed scientific records, or <b>Observer</b> for quick community field observations. Records are stored locally on this device unless you export them.</p>
+ <span class="pill">FUNGI FINDER UK</span>
+ <h2>Explore, observe and record UK fungi.</h2>
+ <p class="muted">Explore the field guide, record detailed Amanita research, or make a quick observation. Records are stored locally on this device unless you export them.</p>
  <div class="modegrid">
-  <button class="mode research" onclick="openMode('research')"><div class="icon">🔬</div><strong>Researcher</strong><span>Detailed specimen, site, habitat, weather, morphology, processing, sample and laboratory records.</span></button>
-  <button class="mode observe" onclick="openMode('observer')"><div class="icon">📍</div><strong>Observer</strong><span>Fast recording of photographs, area, habitat, patch size, visible features and basic observations.</span></button> <button class="mode" onclick="location.href='field-guide.html'">
-  <div class="icon">🍄</div>
-  <strong>Field Guide</strong>
-  <span>Explore UK mushroom species, habitats, identifying features and dangerous lookalikes.</span>
-</button>
+  <button class="mode guide" onclick="location.href='field-guide.html'">
+   <div class="icon">📚</div>
+   <strong>UK Field Guide</strong>
+   <span>Explore UK mushroom species, habitats, identifying features and dangerous lookalikes.</span>
+  </button>
+  <button class="mode research" onclick="openMode('research')">
+   <div class="icon">🔬</div>
+   <strong>Amanita Research</strong>
+   <span>Detailed specimen, site, habitat, weather, morphology, processing, sample and laboratory records.</span>
+  </button>
+  <button class="mode observe" onclick="openMode('observer')">
+   <div class="icon">📍</div>
+   <strong>Observer</strong>
+   <span>Quickly record photographs, general area, habitat, patch size, visible features and basic observations.</span>
+  </button>
  </div>
- <div class="notice" style="margin-top:15px"><b>Privacy:</b> this version is local-first. It does not automatically upload observations to a server.</div>
+ <div class="notice" style="margin-top:15px"><b>Privacy:</b> this version stores observations locally in your browser. It does not automatically upload your records to a server.</div>
+ <div class="warn" style="margin-top:12px"><b>Identification safety:</b> use photographs and multiple features to investigate a find. Never eat a wild mushroom based on an app identification alone.</div>
 </section>
 
 <section id="dashboard" class="hidden">
  <div class="card">
-  <div class="actions" style="justify-content:space-between;align-items:center"><div><span class="pill" id="modePill"></span><h2 id="dashTitle" style="margin-top:7px"></h2></div><button class="secondary" onclick="showHome()">Switch mode</button></div>
+  <div class="actions" style="justify-content:space-between;align-items:center">
+   <div><span class="pill" id="modePill"></span><h2 id="dashTitle" style="margin-top:7px"></h2></div>
+   <button class="secondary" onclick="showHome()">Home</button>
+  </div>
   <div class="statgrid">
    <div class="stat"><b id="recordCount">0</b><span class="muted">records</span></div>
    <div class="stat"><b id="photoCount">0</b><span class="muted">photos</span></div>
@@ -94,7 +131,7 @@ nav button.active{background:#eaf0eb;color:var(--green)}
   </div>
  </div>
  <div id="researchActions" class="card hidden">
-  <h2>Researcher tools</h2>
+  <h2>Amanita Research tools</h2>
   <div class="actions"><button onclick="newRecord('research')">＋ New research record</button><button class="secondary" onclick="showPage('archive')">Archive</button><button class="secondary" onclick="showPage('tools')">Research tools</button></div>
  </div>
  <div id="observerActions" class="card hidden">
@@ -128,7 +165,7 @@ nav button.active{background:#eaf0eb;color:var(--green)}
    <div class="photoBox">
     <label style="text-align:center">Add photographs</label>
     <input id="f_photos" type="file" accept="image/*" capture="environment" multiple>
-    <div class="muted">Use the phone camera or choose existing photographs. Images remain on this device.</div>
+    <div class="muted">Use the phone camera or choose existing photographs. Images are stored with your records in this browser.</div>
     <div id="preview" class="preview"></div>
    </div>
   </div>
@@ -194,11 +231,13 @@ nav button.active{background:#eaf0eb;color:var(--green)}
 </section>
 
 <section id="tools" class="hidden">
- <div class="card"><div class="actions"><button class="secondary" onclick="showDashboard()">← Dashboard</button></div><h2>Research & data tools</h2>
- <p class="muted">Export is the recommended way to create a durable copy of your records.</p>
- <div class="actions"><button onclick="exportJSON()">Export JSON backup</button><button class="secondary" onclick="exportCSV()">Export CSV</button><button class="secondary" onclick="document.getElementById('importFile').click()">Import JSON backup</button><button class="danger" onclick="clearData()">Delete local records</button></div>
- <input id="importFile" class="hidden" type="file" accept=".json,application/json" onchange="importJSON(event)">
- <div class="notice" style="margin-top:12px"><b>Research principle:</b> keep raw observations, record units, and never overwrite an original result. Use exports as your long-term archive.</div>
+ <div class="card">
+  <div class="actions"><button class="secondary" onclick="showDashboard()">← Dashboard</button></div>
+  <h2>Research & data tools</h2>
+  <p class="muted">Export is the recommended way to create a durable copy of your records.</p>
+  <div class="actions"><button onclick="exportJSON()">Export JSON backup</button><button class="secondary" onclick="exportCSV()">Export CSV</button><button class="secondary" onclick="document.getElementById('importFile').click()">Import JSON backup</button><button class="danger" onclick="clearData()">Delete local records</button></div>
+  <input id="importFile" class="hidden" type="file" accept=".json,application/json" onchange="importJSON(event)">
+  <div class="notice" style="margin-top:12px"><b>Research principle:</b> keep raw observations, record units, and never overwrite an original result. Use exports as your long-term archive.</div>
  </div>
 </section>
 </main>
@@ -226,30 +265,57 @@ function showOnly(id){
  document.querySelectorAll('main>section').forEach(s=>s.classList.add('hidden'));
  document.getElementById(id).classList.remove('hidden');
 }
-function showHome(){showOnly('home');document.getElementById('homeBtn').classList.add('hidden');document.getElementById('nav').classList.add('hidden');}
+function showHome(){
+ showOnly('home');
+ document.getElementById('homeBtn').classList.add('hidden');
+ document.getElementById('nav').classList.add('hidden');
+}
 function openMode(mode){
  currentMode=mode;
- document.getElementById('modePill').textContent=mode==='research'?'RESEARCHER MODE':'OBSERVER MODE';
- document.getElementById('dashTitle').textContent=mode==='research'?'Research workspace':'Community observation workspace';
+ document.getElementById('modePill').textContent=mode==='research'?'AMANITA RESEARCH MODE':'OBSERVER MODE';
+ document.getElementById('dashTitle').textContent=mode==='research'?'Amanita Research workspace':'Community observation workspace';
  document.getElementById('researchActions').classList.toggle('hidden',mode!=='research');
  document.getElementById('observerActions').classList.toggle('hidden',mode!=='observer');
  document.getElementById('navTools').classList.toggle('hidden',mode!=='research');
  showDashboard();
 }
 function showDashboard(){
- showOnly('dashboard');document.getElementById('homeBtn').classList.remove('hidden');document.getElementById('nav').classList.remove('hidden');renderDashboard();
+ showOnly('dashboard');
+ document.getElementById('homeBtn').classList.remove('hidden');
+ document.getElementById('nav').classList.remove('hidden');
+ renderDashboard();
 }
-function showPage(page){showOnly(page);document.getElementById('homeBtn').classList.remove('hidden');document.getElementById('nav').classList.remove('hidden');if(page==='archive')renderArchive();}
+function showPage(page){
+ showOnly(page);
+ document.getElementById('homeBtn').classList.remove('hidden');
+ document.getElementById('nav').classList.remove('hidden');
+ if(page==='archive')renderArchive();
+}
 function newRecord(mode){
  currentMode=mode;editingId=null;pendingPhotos=[];
- showOnly('formPage');document.getElementById('homeBtn').classList.remove('hidden');document.getElementById('nav').classList.add('hidden');
- document.getElementById('formTitle').textContent=mode==='research'?'New research record':'New field observation';
+ showOnly('formPage');
+ document.getElementById('homeBtn').classList.remove('hidden');
+ document.getElementById('nav').classList.add('hidden');
+ document.getElementById('formTitle').textContent=mode==='research'?'New Amanita research record':'New field observation';
  document.getElementById('formSub').textContent=mode==='research'?'Capture a detailed, repeatable scientific observation.':'Capture a quick, useful community observation.';
  document.getElementById('researchExtra').classList.toggle('hidden',mode!=='research');
  document.getElementById('notesHeading').textContent=mode==='research'?'6. Notes':'5. Notes';
  ids.forEach(x=>setv(x,''));
- setv('f_id',uid(mode==='research'?'REC':'OBS'));setv('f_datetime',nowLocal());setv('f_privacy','Private');setv('f_processing','Not processed');setv('f_habitat','Woodland');setv('f_canopy','Moderate');setv('f_moisture','Moist');setv('f_litter','Moderate');setv('f_rain','Unknown');setv('f_warts','Not assessed');setv('f_condition','Fresh');setv('f_otheramanita','Not noticed');setv('f_patch','Single / very small');
+ setv('f_id',uid(mode==='research'?'REC':'OBS'));
+ setv('f_datetime',nowLocal());
+ setv('f_privacy','Private');
+ setv('f_processing','Not processed');
+ setv('f_habitat','Woodland');
+ setv('f_canopy','Moderate');
+ setv('f_moisture','Moist');
+ setv('f_litter','Moderate');
+ setv('f_rain','Unknown');
+ setv('f_warts','Not assessed');
+ setv('f_condition','Fresh');
+ setv('f_otheramanita','Not noticed');
+ setv('f_patch','Single / very small');
  document.getElementById('preview').innerHTML='';
+ document.getElementById('f_photos').value='';
 }
 function readForm(){
  const o={};
@@ -257,18 +323,30 @@ function readForm(){
  return o;
 }
 function saveRecord(){
- const r=readForm();r.mode=currentMode;r.id=r.id||uid(currentMode==='research'?'REC':'OBS');r.savedAt=new Date().toISOString();r.photos=pendingPhotos;
- records=records.filter(x=>x.id!==r.id);records.unshift(r);save();showDashboard();
+ const r=readForm();
+ r.mode=currentMode;
+ r.id=r.id||uid(currentMode==='research'?'REC':'OBS');
+ r.savedAt=new Date().toISOString();
+ r.photos=pendingPhotos;
+ records=records.filter(x=>x.id!==r.id);
+ records.unshift(r);save();showDashboard();
 }
 document.getElementById('f_photos').addEventListener('change',async e=>{
  pendingPhotos=[];
  for(const file of [...e.target.files].slice(0,12)){
-   const data=await fileToData(file);pendingPhotos.push({name:file.name,type:file.type,size:file.size,data});
+  const data=await fileToData(file);
+  pendingPhotos.push({name:file.name,type:file.type,size:file.size,data});
  }
  renderPreview();
 });
-function fileToData(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file);});}
-function renderPreview(){document.getElementById('preview').innerHTML=pendingPhotos.map(p=>`<img src="${p.data}" alt="">`).join('');}
+function fileToData(file){
+ return new Promise((res,rej)=>{
+  const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file);
+ });
+}
+function renderPreview(){
+ document.getElementById('preview').innerHTML=pendingPhotos.map(p=>`<img src="${p.data}" alt="">`).join('');
+}
 function renderDashboard(){
  const rs=records.filter(r=>r.mode===currentMode);
  document.getElementById('recordCount').textContent=rs.length;
@@ -290,26 +368,56 @@ function renderArchive(){
 function editRecord(id){
  const r=records.find(x=>x.id===id);if(!r)return;
  editingId=id;currentMode=r.mode;pendingPhotos=r.photos||[];
- showOnly('formPage');document.getElementById('nav').classList.add('hidden');document.getElementById('homeBtn').classList.remove('hidden');
- document.getElementById('formTitle').textContent=r.mode==='research'?'Edit research record':'Edit field observation';
+ showOnly('formPage');
+ document.getElementById('nav').classList.add('hidden');
+ document.getElementById('homeBtn').classList.remove('hidden');
+ document.getElementById('formTitle').textContent=r.mode==='research'?'Edit Amanita research record':'Edit field observation';
  document.getElementById('formSub').textContent='Edit carefully; export previous backups if the record is important.';
  document.getElementById('researchExtra').classList.toggle('hidden',r.mode!=='research');
- ids.forEach(id=>setv(id,r[id.replace('f_','')]||''));renderPreview();
+ document.getElementById('notesHeading').textContent=r.mode==='research'?'6. Notes':'5. Notes';
+ ids.forEach(id=>setv(id,r[id.replace('f_','')]||''));
+ renderPreview();
 }
-function deleteRecord(id){if(confirm('Delete this record from this device?')){records=records.filter(r=>r.id!==id);save();renderDashboard();if(!document.getElementById('archive').classList.contains('hidden'))renderArchive();}}
-function exportJSON(){download('Amanita_Field_Research_Backup_'+dateStamp()+'.json',JSON.stringify({app:'Amanita Field Research & Observer',version:'2.0',exportedAt:new Date().toISOString(),records},null,2),'application/json');}
+function deleteRecord(id){
+ if(confirm('Delete this record from this device?')){
+  records=records.filter(r=>r.id!==id);save();renderDashboard();
+  if(!document.getElementById('archive').classList.contains('hidden'))renderArchive();
+ }
+}
+function exportJSON(){
+ download('FungiFinderUK_Backup_'+dateStamp()+'.json',JSON.stringify({app:'FungiFinderUK',version:'2.0',exportedAt:new Date().toISOString(),records},null,2),'application/json');
+}
 function exportCSV(){
  const fields=['id','mode','datetime','name','area','privacy','elevation','habitat','trees','otherplants','soil','canopy','moisture','litter','temp','rain','weather','count','patch','stage','cap','height','warts','condition','otheramanita','disturbance','site','batch','specimen','processing','sample','lab','rq','scientific','notes'];
  const rows=[fields.join(',')].concat(records.map(r=>fields.map(f=>csv(r[f])).join(',')));
- download('Amanita_Field_Research_Records_'+dateStamp()+'.csv',rows.join('\\n'),'text/csv');
+ download('FungiFinderUK_Records_'+dateStamp()+'.csv',rows.join('\n'),'text/csv');
 }
-function csv(v){return '"'+String(v??'').replaceAll('"','""').replaceAll('\\n',' ')+'"';}
-function download(name,data,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
-function importJSON(e){const file=e.target.files[0];if(!file)return;const fr=new FileReader();fr.onload=()=>{try{const x=JSON.parse(fr.result);if(!Array.isArray(x.records))throw Error();records=[...x.records,...records.filter(a=>!x.records.some(b=>b.id===a.id))];save();renderDashboard();alert('Backup imported successfully.');}catch{alert('That file does not look like a valid Amanita backup.')}};fr.readAsText(file);}
-function clearData(){if(confirm('This deletes all records stored in this browser on this device. Export a backup first if needed.')){records=[];save();renderDashboard();}}
+function csv(v){return '"'+String(v??'').replaceAll('"','""').replaceAll('\n',' ')+'"';}
+function download(name,data,type){
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+function importJSON(e){
+ const file=e.target.files[0];if(!file)return;
+ const fr=new FileReader();
+ fr.onload=()=>{
+  try{
+   const x=JSON.parse(fr.result);if(!Array.isArray(x.records))throw Error();
+   records=[...x.records,...records.filter(a=>!x.records.some(b=>b.id===a.id))];
+   save();renderDashboard();alert('Backup imported successfully.');
+  }catch{alert('That file does not look like a valid FungiFinderUK backup.');}
+  e.target.value='';
+ };
+ fr.readAsText(file);
+}
+function clearData(){
+ if(confirm('This deletes all records stored in this browser on this device. Export a backup first if needed.')){
+  records=[];save();renderDashboard();
+ }
+}
 function dateStamp(){return new Date().toISOString().slice(0,10)}
-function escapeHTML(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
-
+function escapeHTML(s){
+ return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+}
 showHome();
 </script>
 </body>
